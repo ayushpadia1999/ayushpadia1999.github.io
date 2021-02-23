@@ -1,25 +1,70 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>Countdown <3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body{ padding: 0px;
+margin: 0px;}
 .center {
-  margin: auto;
+    background-image: url('https://i.pinimg.com/originals/45/59/db/4559db46ced55ff74057698315fb5869.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: auto;
+    margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    
 }
-p {
+#demo {
+  background-color: rgb(255, 255, 255);  
+  opacity: 0.6;
   text-align: center;
-  font-size: 70px;
+  margin: 10px 10rem;
+  font-size: 80px;
+  color: #000000;
+}
+.button {
+  background-color:rgb(255, 255, 255); 
+  opacity: 0.6;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  width: 150px;
+  color: black;
+  border: 1px solid black;
+  display: inline-block;
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color:rgb(133, 154, 175); /* Green */
+  color: white;
+}
+#container{
+    text-align: center;
+    display: none;
 }
 </style>
 </head>
 <body>
 <div class="center">
-<p id = 'count' ></p>
-<p id="demo"></p>
+    <div id="demo"></div>
+    <div id="container">
+    <a href="#" class="button">YES</a>
+    <a href="https://clipartspub.com/images/video-animated-clipart-happy-birthday-5.gif" class="button">NO</a>
+</div>
 </div>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Feb 27, 2021 00:00:00").getTime();
+var countDownDate = new Date("Feb 27, 2021 15:24:30").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -37,20 +82,21 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
-    document.getElementById("count").innerHTML = "Countdown:"
-  document.getElementById("demo").innerHTML =days + "d " + hours + "h "
+  document.getElementById("demo").innerHTML ="Countdown : "+ days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("count").innerHTML = "";
-    document.getElementById("demo").innerHTML = "Happy Birthday VEE♥";
-    document.getElementById("demo").innerHTML = "Do you want to go on a Movie Date wtih me?";
-    
+    document.getElementById("demo").innerHTML = "Happy Birthday VEE ♥";   
+    var myVar = setInterval(myTimer, 5000);
+    function myTimer() {
+        document.getElementById("demo").innerHTML = "Will you go on a movie date with me??";
+        var x = setInterval(function() { document.getElementById("container").style.display = "block"; } ,2000);
+    }
   }
 }, 1000);
-</script>
 
+</script>
 </body>
 </html>
