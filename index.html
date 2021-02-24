@@ -55,6 +55,9 @@ margin: 0px;}
     text-align: center;
     display: none;
 }
+.smaller {
+  font-size: 4rem;
+}
 </style>
 </head>
 <body>
@@ -94,7 +97,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "Happy Birthday VEE ♥";   
     var myVar = setInterval(myTimer, 5000);
     function myTimer() {
-        document.getElementById("demo").innerHTML = "Will you go on a movie date with me??";
+        document.getElementById("demo").innerHTML = "Will you go on a movie date with me?<span class='smaller'>👉👈</span>";
         var x = setInterval(function() { document.getElementById("container").style.display = "block"; } ,2000);
     }
   }
